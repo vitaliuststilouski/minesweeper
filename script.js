@@ -20,30 +20,30 @@ function minesweeper(matrix) {
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {
             if (matrix[i][j] === false) {
-                if (matrix[i - 1] && matrix[i - 1][j - 1] === true) {
+                if (matrix[i - 1] && matrix[i - 1][j - 1]) {
                     mineArray[i][j]++;
                 }
-                if (matrix[i - 1] && matrix[i - 1][j] === true) {
+                if (matrix[i - 1] && matrix[i - 1][j]) {
                     mineArray[i][j]++;
                 }
-                if (matrix[i - 1] && matrix[i - 1][j + 1] === true) {
-                    mineArray[i][j]++;
-                }
-
-                if (matrix[i][j - 1] === true) {
-                    mineArray[i][j]++;
-                }
-                if (matrix[i][j + 1] === true) {
+                if (matrix[i - 1] && matrix[i - 1][j + 1]) {
                     mineArray[i][j]++;
                 }
 
-                if (matrix[i + 1] && matrix[i + 1][j - 1] === true) {
+                if (matrix[i][j - 1]) {
                     mineArray[i][j]++;
                 }
-                if (matrix[i + 1] && matrix[i + 1][j] === true) {
+                if (matrix[i][j + 1]) {
                     mineArray[i][j]++;
                 }
-                if (matrix[i + 1] && matrix[i + 1][j + 1] === true) {
+
+                if (matrix[i + 1] && matrix[i + 1][j - 1]) {
+                    mineArray[i][j]++;
+                }
+                if (matrix[i + 1] && matrix[i + 1][j]) {
+                    mineArray[i][j]++;
+                }
+                if (matrix[i + 1] && matrix[i + 1][j + 1]) {
                     mineArray[i][j]++;
                 }
             }
